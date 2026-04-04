@@ -3,64 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gracias | IBF Emanuel</title>
-
-    <link rel="stylesheet" href="styles.css">
-
+    <title>Gracias por su mensaje</title>
     <style>
         body {
             margin: 0;
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #0A2540, #133b63);
+            font-family: Arial, sans-serif;
+            background: #0d3b66;
             color: white;
+        }
+
+        .gracias-container {
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
             text-align: center;
+            padding: 20px;
         }
 
-        .thank-you-container {
-            max-width: 600px;
-            padding: 40px;
+        .gracias-box h1 {
+            font-size: 3rem;
+            margin-bottom: 25px;
+            color: white;
         }
 
-        .thank-you-container h1 {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-        }
-
-        .thank-you-container p {
+        .gracias-box p {
             font-size: 1.2rem;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            color: white;
+        }
+
+        .gracias-box .bendicion {
+            font-size: 1.8rem;
             margin-bottom: 30px;
-            opacity: 0.9;
+            color: white;
         }
 
-        .btn-home {
+        .btn-inicio {
             display: inline-block;
-            padding: 12px 25px;
-            background-color: #d4af37;
-            color: #0A2540;
+            background: #d4af37;
+            color: #000;
+            padding: 15px 30px;
             text-decoration: none;
-            font-weight: 600;
-            border-radius: 6px;
-            transition: 0.3s;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s ease;
         }
 
-        .btn-home:hover {
-            background-color: #f0c94d;
+        .btn-inicio:hover {
+            background: #b8942f;
         }
     </style>
 </head>
 <body>
-
-    <div class="thank-you-container">
-        <h1>¡Gracias por su mensaje!</h1>
+    <div class="gracias-container">
+        <div class="gracias-box">
+            <h1>¡Gracias por su mensaje!</h1>
         <p>Este mensaje es para confirmar que hemos recibido su mensaje. Nos pondremos en contacto con usted lo mas antes posible.</p>
         <p>¡Dios Te Bendiga!</p>
-
-        <a href="index.html" class="btn-home">Volver al inicio</a>
+            <p class="bendicion">¡Dios Te Bendiga!</p>
+            <a href="index.html" class="btn-inicio">Volver al inicio</a>
+        </div>
     </div>
-
 </body>
 </html>
