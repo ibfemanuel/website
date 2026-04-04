@@ -657,3 +657,43 @@ body {
 .btn-inicio:hover {
     background: #b8942f;
 }
+/* Fix dark sections with blue background */
+.hero h1,
+.hero p,
+.section-dark h1,
+.section-dark h2,
+.section-dark h3,
+.section-dark h4,
+.section-dark p {
+    color: var(--white);
+}
+.section-dark {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.section-dark h1,
+.section-dark h2,
+.section-dark h3,
+.section-dark h4,
+.section-dark p {
+    color: var(--white);
+}
+<section class="section-dark section-padding">
+    <div class="container">
+        <h2 class="section-title">Una palabra de nuestro Pastor</h2>
+    </div>
+</section>
+.section-dark .section-title {
+    color: var(--white);
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: 
+        linear-gradient(rgba(13, 59, 102, 0.95), rgba(13, 59, 102, 0.95)),
+        url("logo.png") no-repeat center center;
+    background-size: 500px;
+    background-color: #0d3b66;
+    color: white;
+}
