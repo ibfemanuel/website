@@ -606,3 +606,54 @@ img { max-width: 100%; height: auto; display: block; }
     .social-icons { justify-content: center; }
     .social-icon i { font-size: 1.8rem; }
 }
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0d3b66;
+    color: white;
+}
+
+.gracias-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.gracias-box h1 {
+    font-size: 3rem;
+    margin-bottom: 25px;
+    color: white;
+}
+
+.gracias-box p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    color: white;
+}
+
+.gracias-box .bendicion {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.btn-inicio {
+    display: inline-block;
+    background: #d4af37;
+    color: #000;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.btn-inicio:hover {
+    background: #b8942f;
+}
