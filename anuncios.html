@@ -1,110 +1,300 @@
-<section class="section-padding">
-    <div class="container">
-        <div class="section-header text-center">
-            <h2 class="section-title">Calendario de Eventos</h2>
-            <p>Puedes integrar aquí el calendario oficial de la iglesia para mantener a todos informados.</p>
-        </div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Anuncios y eventos de Iglesia Bautista Fundamental Emanuel en Sparta, MI.">
+    <title>Anuncios | Iglesia Bautista Fundamental Emanuel</title>
 
-        <div class="calendar-wrap">
-            <iframe
-                src="https://calendar.google.com/calendar/embed?src=582d2be2e23c707dbc355da7149e753e6803e8cfd47cd3910fdba4e899805e78%40group.calendar.google.com&ctz=America%2FDetroit"
-                style="border: 0"
-                width="100%"
-                height="600"
-                frameborder="0"
-                scrolling="no"
-                title="Calendario de Eventos">
-            </iframe>
-        </div>
-    </div>
-</section>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@500;700;800&display=swap" rel="stylesheet">
 
-<section class="section-padding bg-light">
-    <div class="container">
-        <div class="section-header text-center">
-            <h2 class="section-title">Transmisiones Recientes</h2>
-            <p>Revive algunos de nuestros servicios recientes en YouTube.</p>
-        </div>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-        <div class="video-grid">
+    <style>
+        .page-hero {
+            padding: 180px 20px 100px;
+            background: linear-gradient(135deg, rgba(10, 37, 64, 0.95), rgba(10, 37, 64, 0.85));
+            color: white;
+            text-align: center;
+        }
 
-            <div class="video-card">
-                <iframe
-                    src="https://www.youtube.com/embed/70CV9qmCc70"
-                    title="Transmisión reciente 1"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen>
-                </iframe>
-                <div class="card-body">
-                    <h3>Servicio Reciente 1</h3>
-                    <p>Mira esta transmisión reciente directamente desde nuestra página.</p>
-                </div>
-            </div>
+        .page-hero h1 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
 
-            <div class="video-card">
-                <iframe
-                    src="https://www.youtube.com/embed/-yYKcUHmYxc?"
-                    title="Transmisión reciente 2"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen>
-                </iframe>
-                <div class="card-body">
-                    <h3>Servicio Reciente 2</h3>
-                    <p>Otra transmisión reciente para que puedas verla cuando gustes.</p>
-                </div>
-            </div>
+        .page-hero p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            opacity: 0.95;
+        }
 
-        </div>
-    </div>
-</section>
+        .announcements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
 
-<footer class="site-footer">
-    <div class="container footer-content">
-        <div class="footer-brand">
-            <h3>IBF Emanuel</h3>
-            <p>Una Iglesia Bautista Fundamental comprometida con la verdad bíblica en Sparta, MI.</p>
-            <a href="index.html#contacto" class="btn btn-outline btn-small">Encuéntranos</a>
-        </div>
+        .announcement-card {
+            background: var(--white);
+            border-left: 5px solid var(--secondary-color);
+            border-radius: 8px;
+            box-shadow: var(--box-shadow);
+            padding: 30px;
+        }
 
-        <div class="footer-sections-grid">
-            <div class="footer-links">
-                <h4>Enlaces Rápidos</h4>
-                <ul>
-                    <li><a href="index.html#pastor">Nuestro Pastor</a></li>
-                    <li><a href="index.html#nosotros">Historia y Fe</a></li>
+        .announcement-card h3 {
+            margin-bottom: 15px;
+        }
+
+        .announcement-card p {
+            margin-bottom: 0;
+        }
+
+        .calendar-wrap {
+            margin-top: 30px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            background: var(--white);
+        }
+
+        .calendar-wrap iframe {
+            width: 100%;
+            height: 700px;
+            border: 0;
+            display: block;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .video-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+
+        .video-card iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border: 0;
+            display: block;
+        }
+
+        .video-card .card-body {
+            padding: 20px;
+        }
+
+        .video-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .video-card p {
+            margin-bottom: 0;
+            color: var(--text-light);
+        }
+
+        @media (max-width: 900px) {
+            .page-hero {
+                padding: 150px 20px 80px;
+            }
+
+            .page-hero h1 {
+                font-size: 2.3rem;
+            }
+
+            .calendar-wrap iframe {
+                height: 550px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header" id="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-text">IBF Emanuel</span>
+                <span class="logo-subtext">Sparta, MI</span>
+            </a>
+
+            <nav class="main-nav" id="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html#pastor">Pastor</a></li>
+                    <li><a href="index.html#nosotros">Nosotros</a></li>
                     <li><a href="index.html#ministerios">Ministerios</a></li>
                     <li><a href="anuncios.html">Anuncios</a></li>
                     <li><a href="index.html#contacto">Visitarnos</a></li>
                 </ul>
+                <div class="nav-actions">
+                    <a href="en.html" class="lang-toggle">EN</a>
+                    <a href="index.html#contacto" class="btn btn-primary btn-small">Planifica tu visita</a>
+                </div>
+            </nav>
+
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <span class="badge">Mantente conectado</span>
+            <h1>Anuncios y Eventos</h1>
+            <p>Aquí puedes ver anuncios importantes, próximos eventos y transmisiones recientes de Iglesia Bautista Fundamental Emanuel.</p>
+        </div>
+    </section>
+
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Anuncios Importantes</h2>
+                <p>Mantente al tanto de lo que está sucediendo en nuestra iglesia y comunidad.</p>
             </div>
 
-            <div class="footer-links">
-                <h4>Servicios</h4>
-                <ul>
-                    <li>Domingo: 10:00 AM</li>
-                    <li>Domingo: 11:15 AM</li>
-                    <li>Domingo: 5:00 PM</li>
-                    <li>Jueves: 7:00 PM</li>
-                </ul>
-            </div>
+            <div class="announcements-grid">
+                <div class="announcement-card">
+                    <h3>Servicios Semanales</h3>
+                    <p>Te invitamos a acompañarnos cada domingo y jueves para adorar juntos y crecer en la Palabra de Dios.</p>
+                </div>
 
-            <div class="footer-links">
-                <h4>Conéctanos</h4>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/ibfe.gr" target="_blank" class="social-icon">
-                        <i class="fab fa-facebook"></i>
-                    </a>
-                    <a href="https://www.youtube.com/@ibfemanuel" target="_blank" class="social-icon">
-                        <i class="fab fa-youtube"></i>
-                    </a>
+                <div class="announcement-card">
+                    <h3>Peticiones de Oración</h3>
+                    <p>Si tienes una necesidad o petición especial, puedes comunicarte con nosotros mediante el formulario de contacto en la página principal.</p>
+                </div>
+
+                <div class="announcement-card">
+                    <h3>Eventos Especiales</h3>
+                    <p>Consulta el calendario a continuación para ver actividades, reuniones y eventos especiales de nuestra congregación.</p>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="footer-bottom text-center container">
-        <p>© 2026 Iglesia Bautista Fundamental Emanuel. 111 Grove St. Sparta, MI 49345.</p>
-    </div>
-</footer>
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Calendario de Eventos</h2>
+                <p>Puedes integrar aquí el calendario oficial de la iglesia para mantener a todos informados.</p>
+            </div>
+
+            <div class="calendar-wrap">
+                <iframe
+                    src="https://calendar.google.com/calendar/embed?src=582d2be2e23c707dbc355da7149e753e6803e8cfd47cd3910fdba4e899805e78%40group.calendar.google.com&ctz=America%2FDetroit"
+                    style="border: 0"
+                    width="100%"
+                    height="600"
+                    frameborder="0"
+                    scrolling="no"
+                    title="Calendario de Eventos">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Transmisiones Recientes</h2>
+                <p>Revive algunos de nuestros servicios recientes en YouTube.</p>
+            </div>
+
+            <div class="video-grid">
+                <div class="video-card">
+                    <iframe
+                        src="https://www.youtube.com/embed/70CV9qmCc70"
+                        title="Transmisión reciente 1"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                    <div class="card-body">
+                        <h3>Servicio Reciente 1</h3>
+                        <p>Mira esta transmisión reciente directamente desde nuestra página.</p>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <iframe
+                        src="https://www.youtube.com/embed/-yYKcUHmYxc"
+                        title="Transmisión reciente 2"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                    <div class="card-body">
+                        <h3>Servicio Reciente 2</h3>
+                        <p>Otra transmisión reciente para que puedas verla cuando gustes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h3>IBF Emanuel</h3>
+                <p>Una Iglesia Bautista Fundamental comprometida con la verdad bíblica en Sparta, MI.</p>
+                <a href="index.html#contacto" class="btn btn-outline btn-small">Encuéntranos</a>
+            </div>
+
+            <div class="footer-sections-grid">
+                <div class="footer-links">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html#pastor">Nuestro Pastor</a></li>
+                        <li><a href="index.html#nosotros">Historia y Fe</a></li>
+                        <li><a href="index.html#ministerios">Ministerios</a></li>
+                        <li><a href="anuncios.html">Anuncios</a></li>
+                        <li><a href="index.html#contacto">Visitarnos</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li>Domingo: 10:00 AM</li>
+                        <li>Domingo: 11:15 AM</li>
+                        <li>Domingo: 5:00 PM</li>
+                        <li>Jueves: 7:00 PM</li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Conéctanos</h4>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/ibfe.gr" target="_blank" class="social-icon" aria-label="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@ibfemanuel" target="_blank" class="social-icon" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom text-center container">
+            <p>© 2026 Iglesia Bautista Fundamental Emanuel. 111 Grove St. Sparta, MI 49345. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
